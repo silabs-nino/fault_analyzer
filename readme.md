@@ -7,15 +7,18 @@ A simple utility that takes a user provided coredump and lists potential areas o
 ## How to Use
 
 ```
-usage: system_control_registers.py [-h] CFSR
+usage: system_control_registers.py [-h] [--cfsr CFSR] [--hfsr HFSR] [--shcsr SHCSR]
 
-positional arguments:
-  CFSR        the CFSR value from the ARM device
+options:
+  -h, --help     show this help message and exit
+  --cfsr CFSR    the CFSR value from the ARM device
+  --hfsr HFSR    the HFSR value from the ARM device
+  --shcsr SHCSR  the SHCSR value from the ARM device
 ```
 
 example:
 ```
-> python system_control_registers.py 0xEF205AB5
+> python system_control_registers.py --cfsr 0xEF205AB5 --hfsr 0x80000000 --shcsr 0x9CFF2C90
 ```
 
 ## Background

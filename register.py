@@ -26,6 +26,10 @@ class Register:
         # make list of bitfields that are set and their descriptions
         set_bits = [(bitfield, self.bitfields[bitfield]["description"]) for bitfield in self.bitfields.keys() if self.bitfields[bitfield]["value"]]
 
+        # check for empty list
+        if len(set_bits) == 0:
+            return []
+
         (registers, descriptions) = zip(*set_bits)
 
         table = tp(registers, descriptions)
